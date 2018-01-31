@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+</head>
+<body ng-app="user">
+
+    <div ng-view></div>
+    
+    <script src="app.js"></script>
+    <script src="FBcreds.js"></script>
+    <!-- factories -->
+    <script src="factories/notesFactory.js"></script>
+    <!-- controllers -->
+    <script src="controllers/loginCtrl.js"></script>
+    <script src="controllers/newNoteCtrl.js"></script>
+    <script src="controllers/noteListCtrl.js"></script>
+    <script src="controllers/registrationCtrl.js"></script>
+</body>
+</html>
