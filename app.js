@@ -2,7 +2,19 @@
 
 "use strict";
 
-// set up module and route providers
+let isAuth = (authFactory) =>
+  new Promise((resolve, reject) => {
+    authFactory.isAuthenticated().then(userBool => {
+      console.log("user???", userBool);
+      if (userBool) {
+        console.log("Authenticated user. Go ahead");
+        resolve();
+      } else {
+        console.log("Not Authenticated user. Go away");
+        reject();
+      }
+    });
+  });
 
 angular.module("user", ["ngRoute"])
 .config($routeProvider => {
@@ -23,5 +35,13 @@ angular.module("user", ["ngRoute"])
         templateUrl: "partials/newNote.html",
         controller: "newNoteCtrl"
     })
-    .otherwise("/")
-});
+    .otherwise("/login")
+})
+.run(FBCreds => {
+    let creds = FBCreds;
+    let authConfig = {
+      apiKey: creds.key,
+      authDomain: creds.authDomain
+    };
+    firebase.initializeApp(authConfig);
+  });
