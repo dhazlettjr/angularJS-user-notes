@@ -1,13 +1,13 @@
 'use strict';
 
 // initialize the module to encorporate the factory
-angular.module("user").factory("notesFactory", function($q,$http, FBcreds){
+angular.module("user").factory("notesFactory", function($q,$http, FBCreds){
 
 // Return a promise with XHR
 let getNotesData = () => {
 return $q(function(resolve, reject) {
     $http
-      .get(`${FBcreds.url}notes.json`)
+      .get(`${FBCreds.url}notes.json`)
       .then(
         (data) => {
           resolve(data);
@@ -21,7 +21,7 @@ return $q(function(resolve, reject) {
 let saveNotes = (note) => {
     return $q(function(resolve, reject) {
         $http
-          .post("https://list-eb90b.firebaseio.com/notes.json",JSON.stringify(note))
+          .post(`${FBCreds.url}notes.json`,JSON.stringify(note))
           .then(
             (data) => {
               resolve(data);
