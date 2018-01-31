@@ -7,15 +7,17 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-route.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
 </head>
 <body ng-app="user">
 
     <div ng-view></div>
     
     <script src="app.js"></script>
-    <script src="FBcreds.js"></script>
+    <script src="FBCreds.js"></script>
     <!-- factories -->
     <script src="factories/notesFactory.js"></script>
+    <script src="factories/authFactory.js"></script>
     <!-- controllers -->
     <script src="controllers/loginCtrl.js"></script>
     <script src="controllers/newNoteCtrl.js"></script>
